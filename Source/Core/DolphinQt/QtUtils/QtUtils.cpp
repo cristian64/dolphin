@@ -40,7 +40,7 @@ void AdjustSizeWithinScreen(QWidget* widget)
 {
   const auto screen_size = widget->screen()->availableSize();
 
-  const auto adj_screen_size = screen_size * 9 / 10;
+  const auto adj_screen_size = screen_size * 3 / 4;
 
   widget->resize(widget->sizeHint().boundedTo(adj_screen_size));
 }
