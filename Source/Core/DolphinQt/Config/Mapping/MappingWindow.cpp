@@ -97,6 +97,7 @@ MappingWindow::MappingWindow(QWidget* parent, Type type, int port_num)
   MappingCommon::CreateMappingProcessor(this);
 
   QtUtils::AdjustSizeWithinScreen(this);
+  QtUtils::CenterOnParentWindow(this);
 }
 
 void MappingWindow::CreateDevicesLayout()

@@ -34,6 +34,7 @@ CheatsManager::CheatsManager(Core::System& system, QWidget* parent)
   ConnectWidgets();
 
   QtUtils::AdjustSizeWithinScreen(this);
+  QtUtils::CenterOnParentWindow(this);
 
   auto& settings = Settings::GetQSettings();
   restoreGeometry(settings.value(QStringLiteral("cheatsmanager/geometry")).toByteArray());

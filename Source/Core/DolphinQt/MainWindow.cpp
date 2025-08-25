@@ -109,6 +109,7 @@
 #include "DolphinQt/QtUtils/FileOpenEventFilter.h"
 #include "DolphinQt/QtUtils/ModalMessageBox.h"
 #include "DolphinQt/QtUtils/ParallelProgressDialog.h"
+#include "DolphinQt/QtUtils/QtUtils.h"
 #include "DolphinQt/QtUtils/QueueOnObject.h"
 #include "DolphinQt/QtUtils/RunOnObject.h"
 #include "DolphinQt/QtUtils/WindowActivationEventFilter.h"
@@ -2037,6 +2038,8 @@ void MainWindow::ShowResourcePackManager()
 
 void MainWindow::ShowCheatsManager()
 {
+  QtUtils::CenterOnParentWindow(m_cheats_manager);
+
   m_cheats_manager->show();
 }
 

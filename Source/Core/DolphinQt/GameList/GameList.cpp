@@ -68,6 +68,7 @@
 #include "DolphinQt/QtUtils/ModalMessageBox.h"
 #include "DolphinQt/QtUtils/NonAutodismissibleMenu.h"
 #include "DolphinQt/QtUtils/ParallelProgressDialog.h"
+#include "DolphinQt/QtUtils/QtUtils.h"
 #include "DolphinQt/Resources.h"
 #include "DolphinQt/Settings.h"
 #include "DolphinQt/WiiUpdate.h"
@@ -588,6 +589,9 @@ void GameList::OpenProperties()
   connect(properties, &PropertiesDialog::OpenAchievementSettings, this,
           &GameList::OpenAchievementSettings);
 #endif  // USE_RETRO_ACHIEVEMENTS
+
+  QtUtils::AdjustSizeWithinScreen(properties);
+  QtUtils::CenterOnParentWindow(properties);
 
   properties->show();
 }
