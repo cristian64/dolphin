@@ -16,7 +16,7 @@ void ShowFourDigitYear(QDateTimeEdit* widget);
 
 QWidget* CreateIconWarning(QWidget* parent, QStyle::StandardPixmap standard_pixmap, QLabel* label);
 
-// Similar to QWidget::adjustSize except maximum size is 9/10 of screen rather than 2/3.
+// Similar to QWidget::adjustSize except maximum size is 3/4 of screen rather than 2/3.
 void AdjustSizeWithinScreen(QWidget* widget);
 
 // A QWidget that returns the minimumSizeHint as the primary sizeHint.
