@@ -256,7 +256,6 @@ int main(int argc, char* argv[])
   {
     DolphinAnalytics::Instance().ReportDolphinStart("qt");
 
-    Settings::Instance().InitDefaultPalette();
     Settings::Instance().ApplyStyle();
 
     MainWindow win{Core::System::GetInstance(), std::move(boot),
