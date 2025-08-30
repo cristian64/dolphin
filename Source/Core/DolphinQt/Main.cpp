@@ -162,6 +162,8 @@ int main(int argc, char* argv[])
   QCoreApplication::setOrganizationDomain(QStringLiteral("dolphin-emu.org"));
   QCoreApplication::setApplicationName(QStringLiteral("dolphin-emu"));
 
+  QApplication::setStyle(QStringLiteral("fusion"));
+
   // QApplication will parse arguments and remove any it recognizes as targeting Qt
   QApplication app(argc, argv);
 
@@ -256,7 +258,6 @@ int main(int argc, char* argv[])
   {
     DolphinAnalytics::Instance().ReportDolphinStart("qt");
 
-    Settings::Instance().InitDefaultPalette();
     Settings::Instance().ApplyStyle();
 
     MainWindow win{Core::System::GetInstance(), std::move(boot),

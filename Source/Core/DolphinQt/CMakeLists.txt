@@ -402,12 +402,6 @@ add_executable(dolphin-emu
   WiiUpdate.h
 )
 
-if (WIN32)
-  target_sources(dolphin-emu PRIVATE
-    Styles/Dark/dark.qrc
-  )
-endif()
-
 if (NOT WIN32)
   target_sources(dolphin-emu PRIVATE
     QtUtils/SignalDaemon.cpp

@@ -53,7 +53,6 @@ public:
 
   // UI
   void TriggerThemeChanged();
-  void InitDefaultPalette();
   bool IsSystemDark();
   bool IsThemeDark();
 
@@ -66,9 +65,10 @@ public:
     Light = 1,
     Dark = 2,
     User = 3,
+    DarkGray = 4,
 
     MinValue = 0,
-    MaxValue = 3,
+    MaxValue = 4,
   };
 
   void SetStyleType(StyleType type);
