@@ -25,6 +25,7 @@
 #include "Common/MsgHandler.h"
 #include "Common/Swap.h"
 #include "Core/Config/MainSettings.h"
+#include "Core/ConfigManager.h"
 #include "Core/Core.h"
 #include "Core/HW/AudioInterface.h"
 #include "Core/HW/DSP.h"
@@ -87,10 +88,10 @@ void MemoryManager::InitMMIO(Core::System& system)
 
 void MemoryManager::Init()
 {
-  const auto get_mem1_size = [] {
+  const auto get_mem1_size = [this] {
     if (Config::Get(Config::MAIN_RAM_OVERRIDE_ENABLE))
       return Config::Get(Config::MAIN_MEM1_SIZE);
-    return Memory::MEM1_SIZE_RETAIL;
+    return std::clamp(m_system.GetSimulatedMemorySize(), MEM1_SIZE_RETAIL, MEM1_SIZE_GDEV);
   };
   const auto get_mem2_size = [] {
     if (Config::Get(Config::MAIN_RAM_OVERRIDE_ENABLE))
