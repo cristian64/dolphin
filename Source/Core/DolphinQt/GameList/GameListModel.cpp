@@ -219,6 +219,17 @@ QVariant GameListModel::data(const QModelIndex& index, int role) const
       return tags.join(QStringLiteral(", "));
     }
     break;
+  case Column::SimulatedMemorySize:
+    if (role == Qt::DisplayRole || role == SORT_ROLE)
+    {
+      const u32 simulated_memory_size{game.GetSimulatedMemorySize()};
+      if (role == SORT_ROLE)
+      {
+        return simulated_memory_size;
+      }
+      return QString::fromStdString(UICommon::FormatSize(static_cast<u64>(simulated_memory_size)));
+    }
+    break;
   default:
     break;
   }
@@ -259,6 +270,8 @@ QVariant GameListModel::headerData(int section, Qt::Orientation orientation, int
     return tr("Time Played");
   case Column::Tags:
     return tr("Tags");
+  case Column::SimulatedMemorySize:
+    return tr("Simulated Memory Size");
   default:
     break;
   }

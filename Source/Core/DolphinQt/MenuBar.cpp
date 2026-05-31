@@ -738,7 +738,8 @@ void MenuBar::AddListColumnsMenu(QMenu* view_menu)
       {tr("Block Size"), &Config::MAIN_GAMELIST_COLUMN_BLOCK_SIZE},
       {tr("Compression"), &Config::MAIN_GAMELIST_COLUMN_COMPRESSION},
       {tr("Time Played"), &Config::MAIN_GAMELIST_COLUMN_TIME_PLAYED},
-      {tr("Tags"), &Config::MAIN_GAMELIST_COLUMN_TAGS}};
+      {tr("Tags"), &Config::MAIN_GAMELIST_COLUMN_TAGS},
+      {tr("Simulated Memory Size"), &Config::MAIN_GAMELIST_COLUMN_SIMULATED_MEMORY_SIZE}};
 
   QActionGroup* column_group = new QActionGroup(this);
   m_cols_menu = new QtUtils::NonAutodismissibleMenu(tr("List Columns"), view_menu);

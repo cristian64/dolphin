@@ -62,6 +62,7 @@ public:
     Compression,
     TimePlayed,
     Tags,
+    SimulatedMemorySize,
     Count,
   };
 
