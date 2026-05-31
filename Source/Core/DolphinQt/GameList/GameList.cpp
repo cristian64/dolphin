@@ -235,6 +235,7 @@ void GameList::MakeListView()
     SetResizeMode(Column::Compression, Mode::Fixed);
     SetResizeMode(Column::TimePlayed, Mode::Interactive);
     SetResizeMode(Column::Tags, Mode::Interactive);
+    SetResizeMode(Column::SimulatedMemorySize, Mode::Interactive);
 
     // Cells have 3 pixels of padding, so the width of these needs to be image width + 6. Banners
     // are 96 pixels wide, platform and country icons are 32 pixels wide.
@@ -301,6 +302,8 @@ void GameList::UpdateColumnVisibility()
   SetVisiblity(Column::Compression, Config::Get(Config::MAIN_GAMELIST_COLUMN_COMPRESSION));
   SetVisiblity(Column::TimePlayed, Config::Get(Config::MAIN_GAMELIST_COLUMN_TIME_PLAYED));
   SetVisiblity(Column::Tags, Config::Get(Config::MAIN_GAMELIST_COLUMN_TAGS));
+  SetVisiblity(Column::SimulatedMemorySize,
+               Config::Get(Config::MAIN_GAMELIST_COLUMN_SIMULATED_MEMORY_SIZE));
 }
 
 void GameList::MakeEmptyView()
@@ -1024,6 +1027,7 @@ void GameList::OnColumnVisibilityToggled(const QString& row, bool visible)
       {tr("Compression"), Column::Compression},
       {tr("Time Played"), Column::TimePlayed},
       {tr("Tags"), Column::Tags},
+      {tr("Simulated Memory Size"), Column::SimulatedMemorySize},
   };
 
   m_list->setColumnHidden(static_cast<int>(rowname_to_column[row]), !visible);

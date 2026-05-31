@@ -134,6 +134,7 @@ GameFile::GameFile(std::string path) : m_file_path(std::move(path))
       m_disc_number = volume->GetDiscNumber().value_or(0);
       m_is_two_disc_game = CheckIfTwoDiscGame(m_game_id);
       m_apploader_date = volume->GetApploaderDate();
+      m_simulated_memory_size = volume->GetSimulatedMemorySize();
 
       m_volume_banner.buffer = volume->GetBanner(&m_volume_banner.width, &m_volume_banner.height);
 
@@ -321,6 +322,7 @@ void GameFile::DoState(PointerWrap& p)
   p.Do(m_disc_number);
   p.Do(m_is_two_disc_game);
   p.Do(m_apploader_date);
+  p.Do(m_simulated_memory_size);
 
   p.Do(m_custom_name);
   p.Do(m_custom_description);

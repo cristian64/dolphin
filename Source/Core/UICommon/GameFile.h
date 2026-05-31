@@ -83,6 +83,7 @@ public:
   u8 GetDiscNumber() const { return m_disc_number; }
   bool IsTwoDiscGame() const { return m_is_two_disc_game; }
   std::string GetNetPlayName(const Core::TitleDatabase& title_database) const;
+  u32 GetSimulatedMemorySize() const { return m_simulated_memory_size; }
 
   // This function is slow
   std::array<u8, 20> GetSyncHash() const;
@@ -172,6 +173,7 @@ private:
   u8 m_disc_number{};
   bool m_is_two_disc_game{};
   std::string m_apploader_date;
+  u32 m_simulated_memory_size{};
 
   std::string m_custom_name;
   std::string m_custom_description;
